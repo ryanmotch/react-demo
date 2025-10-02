@@ -3,7 +3,7 @@ import {useState} from "react"
 
 export default function App() {
   const [episodes] = useState(episodeList);
-    const [selectedEpisode, setSelctedEpisode] = useState();
+    const [selectedEpisode, setSelectedEpisode] = useState();
 
 //selected details
 
@@ -25,7 +25,7 @@ export default function App() {
           {selectedEpisode.title}.
         </p>
         
-        <address>{selectedPuppy.description}</address>
+        <address>{selectedEpisode.description}</address>
       </section>
     );
   }
@@ -38,8 +38,8 @@ export default function App() {
         <h2>Roster</h2>
         <ul className="roster">
           {episodes.map((episode) => (
-            <li key={epipsode.id} onClick={() => setSelectedEpisode(Episode)}>
-              {episode.name}
+            <li key={episode.id} onClick={() => setSelectedEpisode(episode)}>
+              {episode.title}
             </li>
           ))}
         </ul>
